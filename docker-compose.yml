@@ -1,0 +1,54 @@
+
+# Docker compose file which beings up:
+#  neginx server for load balacing
+#  two node servers that handle the reuests
+#  mongo database
+#  imports a prexsting database and imports data into the database
+
+version: '3'
+
+services:
+
+  database:
+    image: mongo
+    ports:
+      - 27017
+    container_name: m_doc_db
+
+  database-seed:
+    image: mongo_seed:1
+    build: ./mongo-seed
+    depends_on:
+      - database
+
+  server_1:
+    build: .
+    image: m_doc:2
+    depends_on:
+      - database
+    command: npm start
+    ports:
+      - 8080
+    container_name: m_doc_1
+
+  server_2:
+    build: .
+    image:  m_doc:3
+    depends_on:
+      - database
+    command: npm run start-1
+    ports:
+      - 8081
+    container_name: m_doc_2
+
+  nginx:
+    build: ./nginx
+    image: nginx:1
+    privileged: true
+    links:
+      - server_1
+      - server_2
+    ports:
+      - 9090:9090
+    container_name: nginx_load_balancer
+

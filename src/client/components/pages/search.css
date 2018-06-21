@@ -1,0 +1,23 @@
+.grid-search-container {
+    display: grid;
+    grid-template-columns:  auto;
+    height: 200px;
+    justify-content: stretch;
+    background-color: white;
+    border-radius: 5px;
+    text-align: center;
+  }
+
+.form{
+    padding-top: 10px;
+    padding-bottom: 10px; 
+    border-top-left-radius: 5px;
+    border-top-right-radius: 5px;
+    background-color: #c6c9ce;
+    justify-self: center;
+    width: 100%;
+}
+
+.formItems{
+    margin-right: 5px;
+}

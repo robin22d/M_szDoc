@@ -1,0 +1,21 @@
+
+
+.grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-gap: 10px;
+    height: 200px;
+    text-align: center;
+    justify-content: stretch;
+    background-color: white;
+    padding: 20px;
+  }
+
+.footer{
+
+    background: #e4eaf1;
+    width: 100%;
+    text-align: center;
+    padding-top: 5px;
+    padding-bottom: 5px;
+}

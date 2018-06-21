@@ -1,0 +1,17 @@
+
+.documentTitleList{
+    width: 100%;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    background-color: white;
+    border: 1px solid #dfe8f0;
+    float: left;
+    border-collapse: collapse;
+    text-decoration: none;
+    color: black;
+}
+
+.documentTitleList:hover{
+    background: blanchedalmond;
+}
+
